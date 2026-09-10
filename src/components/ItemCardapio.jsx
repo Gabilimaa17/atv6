@@ -1,9 +1,11 @@
-export default function ItemCardapio({ nome, descricao, preco }) {
+export default function ItemCardapio({ nome, descricao, preco, onAdd }) {
     return (
-        <div className="card-item">
-            <h2>{nome}</h2>
+        <div style={{ borderBottom: '1px solid #ccc', padding: '10px 0' }}>
+            <h3>
+                {nome} - R$ {preco.toFixed(2)}
+            </h3>
             <p>{descricao}</p>
-            <span>R$ {preco.toFixed(2)}</span>
+            <button onClick={onAdd}>Adicionar ao Carrinho</button>
         </div>
     );
 }
